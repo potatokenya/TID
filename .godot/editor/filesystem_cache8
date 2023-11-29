@@ -1,0 +1,45 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1701270737
+bakterie.tscn::PackedScene::2691156402998785652::1701269906::0::1::::<><>::uid://cyrqindy4luem::::res://Assets/characters/bakterie.png
+data.gd::GDScript::-1::1701269906::0::1::::<>Node2D<>::
+dendriske_celler.gd::GDScript::-1::1701269906::0::1::::<>CharacterBody2D<>::
+dendriske_celler.tscn::PackedScene::1825106856950182624::1701269906::0::1::::<><>::uid://d350wc5t80tkj::::res://Assets/characters/dendriske celler.png<>res://dendriske_celler.gd
+draebercelle.tscn::PackedScene::2540196640489563682::1701269906::0::1::::<><>::uid://s1p7ampvv85d::::res://Assets/characters/draebercelle.png
+front_page.gd::GDScript::-1::1701269906::0::1::::<>Control<>::
+front_page.tscn::PackedScene::2916262720320704175::1701269906::0::1::::<><>::res://front_page.gd<>uid://cq62b15ds3rnx::::res://Assets/front page.png<>uid://ew0u3catpr01::::res://Assets/Font/Identidad-ExtraBold.otf
+icon.svg::CompressedTexture2D::7839922432306147500::1701269906::1701270740::1::::<><>::
+level_1.gd::GDScript::-1::1701269906::0::1::::<>Node2D<>::
+level_1.tscn::PackedScene::3457427817448852144::1701269906::0::1::::<><>::uid://b3e4a18eaq1fk::::res://Assets/background.jpeg<>res://level_1.gd<>uid://1mgpykstbny4::::res://Assets/tile.png<>uid://c3hb2wf34ko85::::res://Assets/teori.png<>uid://belu7nn35ifd1::::res://bakterie.tscn<>uid://1adijh8gqdpw::::res://dendriske_celler.tscn<>uid://bcgqwxxbyuq8a::::res://draebercelle.tscn<>uid://b1xl64xbjuepj::::res://skraldespand.tscn<>uid://30gdyn3mi7nx::::res://t_celle.tscn<>uid://cn27mv138q6iv::::res://Assets/bakterie taleboble.png<>uid://drp03l2kiq3g6::::res://Assets/characters/t-celle.png<>uid://ycqpvsxe24fy::::res://t_celle_2.tscn
+skraldespand.gd::GDScript::-1::1701269906::0::1::::<>CharacterBody2D<>::
+skraldespand.tscn::PackedScene::4259536111922710183::1701269906::0::1::::<><>::res://skraldespand.gd<>uid://dk4focpic184o::::res://Assets/characters/skraldespand.png
+t_celle.gd::GDScript::-1::1701269906::0::1::::<>CharacterBody2D<>::
+t_celle.tscn::PackedScene::2017268006986155281::1701269906::0::1::::<><>::uid://drp03l2kiq3g6::::res://Assets/characters/t-celle.png<>res://t_celle.gd<>uid://kfhjlgx5464g::::res://Assets/characters/t-celle-sick.png
+t_celle_2.gd::GDScript::-1::1701269906::0::1::::<>CharacterBody2D<>::
+t_celle_2.tscn::PackedScene::1689660393462021166::1701269906::0::1::::<><>::uid://drp03l2kiq3g6::::res://Assets/characters/t-celle.png<>res://t_celle_2.gd<>uid://kfhjlgx5464g::::res://Assets/characters/t-celle-sick.png
+::res://Assets/::1701269906
+background.jpeg::CompressedTexture2D::4361728026132524636::1701269906::1701270740::1::::<><>::
+bakterie taleboble.png::CompressedTexture2D::5743000051807846449::1701269906::1701270740::1::::<><>::
+front page.png::CompressedTexture2D::5961501132681889909::1701269906::1701270740::1::::<><>::
+teori.png::CompressedTexture2D::6752689731506807192::1701269906::1701270740::1::::<><>::
+tile.png::CompressedTexture2D::1850074833354462329::1701269906::1701270740::1::::<><>::
+::res://Assets/characters/::1701269906
+antigen.png::CompressedTexture2D::1962383274684298273::1701269906::1701270740::1::::<><>::
+b-celle.png::CompressedTexture2D::7282806832313909710::1701269906::1701270740::1::::<><>::
+bakterie.png::CompressedTexture2D::6493454483321122764::1701269906::1701270740::1::::<><>::
+dendriske celler.png::CompressedTexture2D::9188038370150282337::1701269906::1701270740::1::::<><>::
+draebercelle.png::CompressedTexture2D::1318040926634702683::1701269906::1701270740::1::::<><>::
+kampo.png::CompressedTexture2D::4955852064295266404::1701269906::1701270740::1::::<><>::
+plasmacelle.png::CompressedTexture2D::351956433459018337::1701269906::1701270740::1::::<><>::
+skraldespand.png::CompressedTexture2D::7921346156991845020::1701269906::1701270740::1::::<><>::
+t-celle-sick.png::CompressedTexture2D::712652004357091588::1701269906::1701270740::1::::<><>::
+t-celle.png::CompressedTexture2D::8385006606217526235::1701269906::1701270740::1::::<><>::
+T-hjælpeceller.png::CompressedTexture2D::13167027569930672::1701269906::1701270740::1::::<><>::
+::res://Assets/Font/::1701269906
+dynamicfont.tres::FontFile::7267724114675640055::1701269906::0::1::::<><>::uid://ew0u3catpr01::::res://Assets/Font/Identidad-ExtraBold.otf
+Identidad-ExtraBold.otf::FontFile::327726799608117464::1701269906::1701270739::1::::<><>::
+new_bitmapfont.tres::FontFile::-1::1701269906::0::1::::<><>::
+new_dynamicfont.tres::FontFile::-1::1701269906::0::1::::<><>::res://Assets/Font/Identidad-ExtraBold.otf
+Node2D.tscn::PackedScene::-1::1701269906::0::1::::<><>::
+Start.tscn::PackedScene::-1::1701269906::0::1::::<><>::res://Assets/Spill the tea forside.jpg<>res://Assets/Font/new_dynamicfont.tres
+Ubuntu-Regular.ttf::FontFile::8727491547490947261::1701269906::1701270739::1::::<><>::
+Yeah.tres::FontFile::-1::1701269906::0::1::::<><>::

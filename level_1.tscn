@@ -84,6 +84,21 @@ texture = ExtResource("2_ootad")
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_ts805")
 
+[sub_resource type="Animation" id="Animation_t3576"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(997, 493)]
+}
+
 [sub_resource type="Animation" id="Animation_h86oa"]
 resource_name = "ba1"
 length = 2.0
@@ -100,7 +115,13 @@ tracks/0/keys = {
 "values": [Vector2(997, 493), Vector2(636, 493)]
 }
 
-[sub_resource type="Animation" id="Animation_t3576"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e4f05"]
+_data = {
+"RESET": SubResource("Animation_t3576"),
+"ba1": SubResource("Animation_h86oa")
+}
+
+[sub_resource type="Animation" id="Animation_wa7ky"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -112,13 +133,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(997, 493)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_e4f05"]
-_data = {
-"RESET": SubResource("Animation_t3576"),
-"ba1": SubResource("Animation_h86oa")
+"values": [Vector2(916, 326)]
 }
 
 [sub_resource type="Animation" id="Animation_0xpgu"]
@@ -135,21 +150,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(916, 326), Vector2(714, 331), Vector2(511, 493), Vector2(423, 493)]
-}
-
-[sub_resource type="Animation" id="Animation_wa7ky"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(916, 326)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jasgc"]
@@ -296,24 +296,29 @@ position = Vector2(288, 340)
 scale = Vector2(2, 2)
 texture = ExtResource("11_o74ew")
 
+[node name="t-celle2" parent="." instance=ExtResource("12_yvwcw")]
+position = Vector2(573, 503)
+
+[node name="ShowData" type="TextEdit" parent="."]
+offset_left = 37.0
+offset_top = 13.0
+offset_right = 935.0
+offset_bottom = 81.0
+
 [node name="teori" type="TextureRect" parent="."]
-visible = false
 offset_left = 109.0
 offset_top = 51.0
 offset_right = 930.0
 offset_bottom = 556.0
 texture = ExtResource("3_iuav3")
 
-[node name="t-celle2" parent="." instance=ExtResource("12_yvwcw")]
-position = Vector2(573, 503)
-
 [connection signal="pressed" from="?" to="." method="_on__pressed"]
 [connection signal="timeout" from="Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="pressed" from="Q1/ja_btn" to="." method="_on_ja_btn_pressed"]
 [connection signal="pressed" from="Q1/ja_btn" to="dendriske celler" method="_on_ja_btn_pressed"]
 [connection signal="pressed" from="Q1/ja_btn" to="T-celle" method="_on_ja_btn_pressed"]
-[connection signal="pressed" from="Q1/nej_btn" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Q1/nej_btn" to="." method="_on_nej_btn_pressed"]
+[connection signal="pressed" from="Q1/nej_btn" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Q1/Q1_igen" to="." method="_on_q_1_igen_pressed"]
 [connection signal="timeout" from="Q1Q2" to="." method="_on_q_1q_2_timeout"]
 [connection signal="timeout" from="Q1Q2" to="T-celle" method="_on_q_1q_2_timeout"]
