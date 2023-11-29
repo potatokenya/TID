@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://30gdyn3mi7nx"]
+
+[ext_resource type="Texture2D" uid="uid://drp03l2kiq3g6" path="res://Assets/characters/t-celle.png" id="1_khxf4"]
+[ext_resource type="Script" path="res://t_celle.gd" id="1_shq45"]
+[ext_resource type="Texture2D" uid="uid://kfhjlgx5464g" path="res://Assets/characters/t-celle-sick.png" id="3_duao0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1gww6"]
+height = 38.0
+
+[sub_resource type="Animation" id="Animation_pvb8d"]
+resource_name = "tca"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("T-celle_s:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.9, 1.4, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.282743, 0.141372, -0.211185, 0.141372, -0.0698132, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_y1fw2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("T-celle_s:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.282743]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rmtc3"]
+_data = {
+"RESET": SubResource("Animation_y1fw2"),
+"tca": SubResource("Animation_pvb8d")
+}
+
+[node name="T-celle" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_shq45")
+
+[node name="T-celle_s" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+texture = ExtResource("1_khxf4")
+
+[node name="T-cele_c" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 3)
+shape = SubResource("CapsuleShape2D_1gww6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rmtc3")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+
+[node name="t-celle_sick" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_duao0")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

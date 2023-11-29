@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://1adijh8gqdpw"]
+
+[ext_resource type="Texture2D" uid="uid://d350wc5t80tkj" path="res://Assets/characters/dendriske celler.png" id="1_2nno1"]
+[ext_resource type="Script" path="res://dendriske_celler.gd" id="1_d4a45"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_br33b"]
+radius = 17.0
+height = 36.0
+
+[sub_resource type="Animation" id="Animation_7crje"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/dc_s:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/dc_s:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.282743]
+}
+
+[sub_resource type="Animation" id="Animation_3cgjr"]
+resource_name = "ht"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/dc_s:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.9, 1.6, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2.08165e-12, -15), Vector2(0, 0), Vector2(2.08165e-12, -15)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/dc_s:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.6, 1.1, 1.6, 2.1, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.282743, -0.352556, 0.356047, -0.651008, 0.558505, -0.383972]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_afv51"]
+_data = {
+"RESET": SubResource("Animation_7crje"),
+"ht": SubResource("Animation_3cgjr")
+}
+
+[node name="dendriske celler" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_d4a45")
+
+[node name="dc_c" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_br33b")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="dc_s" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("1_2nno1")
+
+[node name="dc_c2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_br33b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_afv51")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

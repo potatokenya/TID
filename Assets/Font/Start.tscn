@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Spill the tea forside.jpg" type="Texture2D" id=1]
+[ext_resource path="res://Assets/Font/new_dynamicfont.tres" type="FontFile" id=2]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.54902, 0.729412, 0.917647, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.839216, 0.443137, 0.584314, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2( 511, 304 )
+scale = Vector2( 0.789388, 0.789388 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Play_btn" type="Button" parent="."]
+offset_left = 456.0
+offset_top = 456.0
+offset_right = 608.0
+offset_bottom = 528.0
+theme = SubResource( 1 )
+theme_override_fonts/font = ExtResource( 2 )
+theme_override_styles/normal = SubResource( 2 )
+text = "PLAY"
+
+[node name="Tutorial_btn" type="Button" parent="."]
+modulate = Color( 1, 0.988235, 0.988235, 1 )
+offset_left = 693.0
+offset_top = 456.0
+offset_right = 869.0
+offset_bottom = 528.0
+theme_override_colors/font_disabled_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = ExtResource( 2 )
+theme_override_styles/normal = SubResource( 3 )
+text = "Tutorial"

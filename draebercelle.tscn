@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcgqwxxbyuq8a"]
+
+[ext_resource type="Texture2D" uid="uid://s1p7ampvv85d" path="res://Assets/characters/draebercelle.png" id="1_83x46"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s38ga"]
+radius = 16.0
+height = 32.0
+
+[node name="draebercelle" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+
+[node name="draebercelle_s" type="Sprite2D" parent="."]
+texture = ExtResource("1_83x46")
+
+[node name="draebercelle_c" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_s38ga")

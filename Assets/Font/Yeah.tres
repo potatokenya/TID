@@ -1,0 +1,4 @@
+[gd_resource type="FontFile" format=2]
+
+[resource]
+outline_color = Color( 0.234375, 0.0545058, 0.0545058, 1 )

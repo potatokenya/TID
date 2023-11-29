@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://belu7nn35ifd1"]
+
+[ext_resource type="Texture2D" uid="uid://cyrqindy4luem" path="res://Assets/characters/bakterie.png" id="1_dmjre"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k5kxs"]
+radius = 14.0
+height = 38.0
+
+[node name="Bakterie" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+
+[node name="bakterie_s" type="Sprite2D" parent="."]
+texture = ExtResource("1_dmjre")
+
+[node name="bakterie_c" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 4)
+shape = SubResource("CapsuleShape2D_k5kxs")

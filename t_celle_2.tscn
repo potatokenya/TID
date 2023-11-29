@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://ycqpvsxe24fy"]
+
+[ext_resource type="Texture2D" uid="uid://drp03l2kiq3g6" path="res://Assets/characters/t-celle.png" id="1_1hov3"]
+[ext_resource type="Script" path="res://t_celle_2.gd" id="1_oafyr"]
+[ext_resource type="Texture2D" uid="uid://kfhjlgx5464g" path="res://Assets/characters/t-celle-sick.png" id="2_joxru"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_otyja"]
+radius = 19.0
+height = 64.0
+
+[sub_resource type="Animation" id="Animation_a23uy"]
+resource_name = "tc2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.3, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.211185, -0.21293, 0.280998, -0.21293, 0.211185, -0.354302]
+}
+
+[sub_resource type="Animation" id="Animation_61mnd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.211185]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2s0mq"]
+_data = {
+"RESET": SubResource("Animation_61mnd"),
+"tc2": SubResource("Animation_a23uy")
+}
+
+[node name="t-celle2" type="CharacterBody2D"]
+script = ExtResource("1_oafyr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("1_1hov3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_otyja")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2s0mq")
+}
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(3, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("2_joxru")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
